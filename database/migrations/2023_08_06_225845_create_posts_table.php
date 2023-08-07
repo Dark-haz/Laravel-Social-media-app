@@ -16,7 +16,7 @@ return new class extends Migration
             $table->timestamps();
             $table->string('title')->unique()->onDelete('cascade');
             $table->text('description');
-            $table->integer('votes'); //add or substract based on interaction
+            $table->integer('votes')->default(0); //add or substract based on interaction
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
         });
     }

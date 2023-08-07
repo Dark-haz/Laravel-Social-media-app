@@ -14,8 +14,13 @@ class Comment extends Model
          'description'
     ];
 
-     //relashionship to post
+     //relashionship to user
      public function user(){
+        return $this->belongsTo(User::class,'user_id');
+     }
+
+    //relashionship to post
+     public function post(){
         return $this->belongsTo(Post::class,'post_id');
     }
 
